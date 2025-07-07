@@ -77,6 +77,7 @@ void SegmentText(uint32_t *Codepoints, size_t CodepointCount)
       {
         size_t RunLength = Break.Position - RunStart;
         ShapeText(&Cursor, Codepoints + RunStart, RunLength, BreakState.MainDirection, Direction, Script);
+        RunStart = Break.Position;
       }
 
       if(Break.Flags & KBTS_BREAK_FLAG_DIRECTION)
